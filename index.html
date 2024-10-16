@@ -42,6 +42,9 @@ body {
   font-size: clamp(1rem, 1.2vw + 1rem, 18.13px); /* Fluid between 16px and 18.13px */
   line-height: 1.27; /* Keeps a consistent line-height */
   color: #464646; /* Main text color */
+  height: 100svh;
+  width: 100vw;
+  overflow: hidden;
 }
 
 /* Big Text */
@@ -103,6 +106,18 @@ body {
 body a {
   text-decoration: none;
   color: inherit;
+
+}
+
+.home {
+    height: 100% !important;
+    width: 100% !important;
+    display: flex;
+}
+
+main {
+    height: 100svh;
+    width: 100vw;
 }
 
 .transition main {
@@ -587,7 +602,6 @@ figure img {
 }
 
 main {
-  min-height: calc(100vh - 8rem);
 }
 
 /* PROJECT PAGE */
@@ -839,21 +853,28 @@ main {
     width: 50%;
     flex: none;
   }
+
+  .contact {
+    width: 100%;
+    text-align: center;
+  }
 }
 </style>
 <body data-barba="wrapper">
     <main data-barba="container" data-main-title="Home" data-barba-namespace="home" >
-        <a href="mailto:atelierpeduzzi@gmail.com" class="home">
+        <div class="home">
     <img src="https://sfc-1.jean-rene-jean.dev/media/pages/home/5c7a8a8429-1726043482/objects.png">
     <div class="fake-menu">
         <span>Atelier Richard Peduzzi</span>
         <div class="word-wrapper">
-                            <span>Scénographie</span>
-                            <span>Design</span>
-                            <span>Architecture</span>
-                    </div>
+            <span>Scénographie</span>
+            <span>Design</span>
+            <span>Architecture</span>
     </div>
-</a>
+        <span class="contact">Contact: <a href="mailto:atelierpeduzzi@gmail.com">atelierpeduzzi@gmail.com</a></span>
+        
+    </div>
+</div>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         const spans = document.querySelectorAll('.fake-menu span');
@@ -869,16 +890,7 @@ main {
         }, spans.length * 1000 + 500);
     });
 </script>
-    <footer>
-        <div class="header-container">
-            ©2024 Atelier Richard Peduzzi        </div>
-        <div class="header-container">
-            Instagram Email
-        </div>
-        <div class="header-container">
-            Credits
-        </div>
-    </footer>
+  
 </main>
 <script src="https://cdn.jsdelivr.net/npm/keen-slider@6.8.5/keen-slider.min.js"></script>
 
